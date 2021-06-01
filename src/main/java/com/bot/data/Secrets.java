@@ -2,7 +2,7 @@ package com.bot.data;
 
 public class Secrets {
     public static String token() {
-        return "ODQ4ODg0NTk0NDUwMzY2NDg0.YLTHYg.YaueOykld6EZDaXvrUfOESv8peA";
+        return "Your discord bot token here";
     }
 
     public static String clientId() {
