@@ -1,12 +1,8 @@
 package com.bot;
 
 import com.bot.data.Data;
-import com.bot.data.Secrets;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
-import discord4j.core.event.domain.lifecycle.ReadyEvent;
-import discord4j.core.event.domain.message.MessageCreateEvent;
-import discord4j.core.object.entity.User;
 import discord4j.core.object.presence.Activity;
 import discord4j.core.object.presence.Presence;
 
@@ -19,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         loadProperties();
 
-        GatewayDiscordClient client = DiscordClientBuilder.create(Secrets.token())
+        GatewayDiscordClient client = DiscordClientBuilder.create(args[0])
                 .build()
                 .login()
                 .block();
@@ -30,7 +26,7 @@ public class Main {
         botThread.start();
 
         boolean running = true;
-        while(running) {
+        while (running) {
             Scanner in = new Scanner(System.in);
             String cmd = in.nextLine();
             if (cmd.equals("stop")) {
