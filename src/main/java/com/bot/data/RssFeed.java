@@ -29,7 +29,6 @@ public class RssFeed {
 
             URL feedSource = uri.toURL();
             SyndFeedInput input = new SyndFeedInput();
-
             SyndFeed feed = input.build(new XmlReader(feedSource));
 
             List<?> entries = feed.getEntries();

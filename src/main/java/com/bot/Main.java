@@ -43,6 +43,7 @@ public class Main {
     }
 
     private static void loadProperties() {
+        Data.getAvailableNewsFeeds().clear();
         String filename = "news_feed/news_topics.properties";
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream(filename)) {
             Properties prop = new Properties();
