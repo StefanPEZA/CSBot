@@ -3,11 +3,12 @@
 -   Author: [Pezamosca Ștefănel](https://github.com/StefanPEZA)
 
 ## Cerinte principale
+
 DiscordBot
-    - Servicii REST, Discord API
-    - Crearea unui bot pentru Discord capabil sa ofere mesaje preluate prin RSS
+-  Servicii REST, Discord API<br>
+-  Crearea unui bot pentru Discord capabil sa ofere mesaje preluate prin RSS
     pe anumite teme (programare, Java, etc) si sa raspunda la intrebari simple
-    - Pot fi folosite biblioteci RSS (Rich Site Summary or Really Simple
+-  Pot fi folosite biblioteci RSS (Rich Site Summary or Really Simple
     Syndication) cum ar fi ROME
 
 ## Scurta descriere
