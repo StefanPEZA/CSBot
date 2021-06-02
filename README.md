@@ -151,5 +151,7 @@ Comanda: #help                - arata o lista a tuturor comenzilor disponibile
 Comanda: #clear <cantitate>   - sterge o anumita cantitate de mesaje din trecut
 ```
 
+Dacă vreți să rulați botul pe calculatorul vostru puteți face asta, descărcând CSBot.jar din releases, si ruland comanda ` java -jar CSBot.jar <token-ul generat de discord pentru voi> `
+
 <br><br>
 Link de invitație dacă vreți să invitați botul pe serverul vostru de discord: [invite](https://discord.com/api/oauth2/authorize?client_id=848884594450366484&permissions=8&scope=bot)
