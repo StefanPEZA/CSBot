@@ -30,6 +30,10 @@ public class BotThread extends Thread {
             thread.start();
         });
 
-        client.onDisconnect().block();
+        try {
+            client.onDisconnect().block();
+        } catch (IllegalStateException e) {
+            System.out.println("Discord bot server shutdown!");
+        }
     }
 }

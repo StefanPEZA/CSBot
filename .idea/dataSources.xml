@@ -13,5 +13,16 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="default/Hibernate" uuid="a44492cd-fc6b-4ad2-be0c-cf4042d8a9a9">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+E:/ProiectePersonale/CSBot/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:csbotdb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
