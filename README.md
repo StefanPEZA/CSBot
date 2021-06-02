@@ -2,6 +2,14 @@
 
 -   Author: [Pezamosca Ștefănel](https://github.com/StefanPEZA)
 
+## Cerinte principale
+DiscordBot
+    - Servicii REST, Discord API
+    - Crearea unui bot pentru Discord capabil sa ofere mesaje preluate prin RSS
+    pe anumite teme (programare, Java, etc) si sa raspunda la intrebari simple
+    - Pot fi folosite biblioteci RSS (Rich Site Summary or Really Simple
+    Syndication) cum ar fi ROME
+
 ## Scurta descriere
 
 CSBot este un bot de discord cu ajutorul caruia puteti sa aflati raspunsuri la aproape toate intrebarile voastre. Puteți căuta întrebări pe stackoverflow, sau sa puneti întrebari simple API-ului de la WolframAlpha, care va oferi raspunsuri detaliate.
