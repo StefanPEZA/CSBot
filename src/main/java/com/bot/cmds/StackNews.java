@@ -6,9 +6,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 
-public class StackNews extends Command {
+public class StackNews implements Command {
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         Message msg = (Message) args[0];
 
         Integer max = (Integer) args[1];
@@ -34,7 +34,5 @@ public class StackNews extends Command {
         System.out.println("Sending request to: " + uri);
 
         RssFeed.sendRequest(msg, uri, max);
-
-        return true;
     }
 }

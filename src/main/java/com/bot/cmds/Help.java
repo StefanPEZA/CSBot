@@ -6,12 +6,12 @@ import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.User;
 import discord4j.rest.util.Color;
 
-public class Help extends Command {
+public class Help implements Command {
     private final String title = "Here is a list of commands";
     private final StringBuilder description = new StringBuilder();
 
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         short count = 1;
         Message msg = (Message) args[0];
         description.append("----------------------------------------------------------------\n");
@@ -51,6 +51,5 @@ public class Help extends Command {
                     .setColor(Color.LIGHT_SEA_GREEN)
                     .setTitle(title);
         }).subscribe();
-        return true;
     }
 }

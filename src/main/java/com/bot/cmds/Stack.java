@@ -23,9 +23,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Stack extends Command {
+public class Stack implements Command {
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         Message msg = (Message) args[0];
 
         String title = (String) args[1];
@@ -37,7 +37,7 @@ public class Stack extends Command {
             msg.getChannel().block()
                     .createMessage("Usage: ```" + prefix + "stack [title] #[tag]```")
                     .block();
-            return false;
+            return;
         }
 
         UriComponentsBuilder builder = UriComponentsBuilder.fromUriString("https://api.stackexchange.com/2.2/search")
@@ -52,8 +52,6 @@ public class Stack extends Command {
         System.out.println("Sending request to: " + builder.build().toUri());
 
         sendRequest(builder.build().toUri(), msg);
-
-        return true;
     }
 
     private void sendRequest(URI uri, Message msg) {

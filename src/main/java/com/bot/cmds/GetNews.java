@@ -6,11 +6,10 @@ import discord4j.core.object.entity.Message;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.util.Arrays;
 
-public class GetNews extends Command {
+public class GetNews implements Command {
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         Message msg = (Message) args[0];
 
         Integer max = (Integer) args[1];
@@ -36,9 +35,5 @@ public class GetNews extends Command {
         } else {
             msg.getChannel().flatMap(channel -> channel.createMessage("Category not found!\nAvailable categories: " + Data.getAvailableNewsFeeds().keySet())).subscribe();
         }
-
-
-
-        return true;
     }
 }

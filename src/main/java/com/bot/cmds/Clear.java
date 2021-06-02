@@ -4,17 +4,13 @@ import com.bot.data.Data;
 import discord4j.common.util.Snowflake;
 import discord4j.core.object.entity.Guild;
 import discord4j.core.object.entity.Message;
-import discord4j.core.object.entity.channel.MessageChannel;
 import discord4j.core.object.entity.channel.TextChannel;
-import org.reactivestreams.Publisher;
-import reactor.netty.channel.ChannelOperations;
 
 import java.time.Instant;
-import java.util.List;
 
-public class Clear extends Command {
+public class Clear implements Command {
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         Message msg = (Message) args[0];
         String tempAmount = (String) args[1];
 
@@ -32,8 +28,6 @@ public class Clear extends Command {
         }
 
         deleteMessages(msg, amount);
-
-        return true;
     }
 
     private void deleteMessages(Message msg, Integer amount) {

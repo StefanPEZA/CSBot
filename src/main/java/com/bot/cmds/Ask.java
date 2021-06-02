@@ -17,9 +17,9 @@ import java.net.URI;
 import java.time.Instant;
 import java.util.*;
 
-public class Ask extends Command {
+public class Ask implements Command {
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         Message msg = (Message) args[0];
         String query = (String) args[1];
         query = query.replaceAll("\\+", "plus");
@@ -34,8 +34,6 @@ public class Ask extends Command {
         System.out.println("Sending request to: " + builder.build().toUri());
 
         sendRequest(builder.build().toUri(), msg);
-
-        return true;
     }
 
     private void sendRequest(URI uri, Message msg) {

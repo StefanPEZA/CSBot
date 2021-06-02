@@ -4,9 +4,9 @@ import com.bot.data.Data;
 import discord4j.core.object.entity.Guild;
 import discord4j.core.object.entity.Message;
 
-public class ChangePrefix extends Command {
+public class ChangePrefix implements Command {
     @Override
-    public boolean execute(Object... args) {
+    public void execute(Object... args) {
         Message msg = (Message) args[0];
         Guild guild = msg.getGuild().block();
         if (args.length == 1) {
@@ -24,6 +24,5 @@ public class ChangePrefix extends Command {
             msg.getChannel()
                     .flatMap(channel -> channel.createMessage("You changed prefix to " + Data.getPrefix(guild.getId().asString()))).subscribe();
         }
-        return true;
     }
 }
