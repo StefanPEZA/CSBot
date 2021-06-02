@@ -141,6 +141,22 @@ Jsoup este o librarie cu ajutorul careia se pot parsa documente HTML. L-am folos
 Jsoup.parse(html).wholeText();
 ```
 
+-   #### [SQLite](https://sqlite.org/index.html)
+Am folosit sqlite deoarece baza de date este salvata in sistemul local de fisiere, astfel pentru rularea aplicatiei nu mai este nevoie de un server de baze de date.
+
+```
+<dependency>
+    <groupId>org.xerial</groupId>
+    <artifactId>sqlite-jdbc</artifactId>
+    <version>3.34.0</version>
+</dependency>
+<dependency>
+    <groupId>com.enigmabridge</groupId>
+    <artifactId>hibernate4-sqlite-dialect</artifactId>
+    <version>0.1.2</version>
+</dependency>
+```
+
 -   #### Alte comenzi
 
 ```

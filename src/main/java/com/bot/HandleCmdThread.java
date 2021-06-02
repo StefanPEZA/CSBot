@@ -70,6 +70,7 @@ public class HandleCmdThread extends Thread {
                 Command exec = new GetNews();
                 exec.execute(msg, max, topic);
             } catch (Exception e) {
+                e.printStackTrace();
                 msg.getChannel().block()
                         .createMessage("Available categories: " + Data.getAvailableNewsFeeds().keySet() + "\nUsage: ```" + prefix + "news [max] #[topic]```")
                         .block();

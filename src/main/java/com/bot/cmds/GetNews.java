@@ -1,10 +1,13 @@
 package com.bot.cmds;
 
 import com.bot.data.Data;
+import com.bot.data.ManagerEntity;
 import com.bot.data.RssFeed;
 import discord4j.core.object.entity.Message;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import java.net.URI;
 
 public class GetNews implements Command {

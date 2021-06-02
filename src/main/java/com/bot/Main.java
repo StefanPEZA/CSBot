@@ -1,11 +1,15 @@
 package com.bot;
 
 import com.bot.data.Data;
+import com.bot.data.ManagerEntity;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.object.presence.Activity;
 import discord4j.core.object.presence.Presence;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -13,7 +17,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        loadProperties();
+        ManagerEntity.getEm().createEntityManager();
 
         GatewayDiscordClient client = DiscordClientBuilder.create(args[0])
                 .build()
@@ -40,27 +44,5 @@ public class Main {
             }
         }
 
-    }
-
-    private static void loadProperties() {
-        Data.getAvailableNewsFeeds().clear();
-        String filename = "news_feed/news_topics.properties";
-        try (InputStream input = Main.class.getClassLoader().getResourceAsStream(filename)) {
-            Properties prop = new Properties();
-
-            if (input == null) {
-                System.out.println("Sorry, unable to find " + filename);
-                return;
-            }
-
-            prop.load(input);
-
-            prop.forEach((key, value) -> {
-                Data.getAvailableNewsFeeds().put((String) key, (String) value);
-            });
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 }
